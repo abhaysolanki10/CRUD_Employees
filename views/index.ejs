@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Employees Details</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div class="title">
+    <h2>Employees List</h2>
+    <p>List of employees in company</p>
+  </div>
+  <div class="w3-cont">
+    <div class="form-container">
+      <form method="post" action="/employees/add">
+        <label for="fname">First Name</label>
+        <input type="text" name="firstname" placeholder="Your name..">
+
+        <label for="lname">Last Name</label>
+        <input type="text" name="email" placeholder="Your Email..">
+
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+
+    <div class="list-container">
+
+      <ul class="w3-ul w3-card-4 w3-white list">
+        <% employees.forEach(function(employee){ %>
+          <li class="w3-bar w3-white">
+            <span onclick="" class=" w3-bar-item w3-button w3-red w3-xlarge w3-right">×</span>
+            <img src="img_avatar2.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+            <div class="w3-bar-item">
+              <span class="w3-large">
+                <%= employee.value.name %>
+              </span><br>
+              <span>
+                <%= employee.value.email %>
+              </span>
+            </div>
+          </li>
+          <% }) %>
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>
